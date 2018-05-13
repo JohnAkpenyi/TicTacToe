@@ -10,6 +10,7 @@ string LetterChoice();
 int ArrayChoice(); 
 int PrintTurn(); 
 void WinConditions(); 
+void printwin();
 
 
 FTicTacToe TicGame;
@@ -192,10 +193,20 @@ int PrintTurn() {
 	return 0; 
 }
 void WinConditions() {
-	if (placeholder[0], placeholder[1], placeholder[2] == "x") {	
+	//WinConditionsForPlayer1
+	if (placeholder[0], placeholder[1], placeholder[2] == "x") {
 
-		TicGame.WON = true;
-
-		cout << "You Won!"; 
+		printwin();
 	}
+	if (placeholder[3], placeholder[4], placeholder[5] == "x")
+	{
+		printwin();
+	}
+
+}
+
+void printwin() {
+	TicGame.WON = true;
+
+	cout << "You Won!";
 }
