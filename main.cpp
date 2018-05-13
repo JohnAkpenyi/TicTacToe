@@ -79,27 +79,69 @@ int ArrayChoice()
 	}
 	//placeholder 3		
 	if (AChoice == 4) {
-		placeholder[3] = LetterChoice();
+		if (placeholder[3] == " ")
+		{
+			placeholder[3] = LetterChoice();
+		}
+		else
+		{
+			cout << "Error: Place holder already used, please use a different one." << endl;
+		}
 	}
 	//placeholder 4		
 	if (AChoice == 5) {
-		placeholder[4] = LetterChoice();
+		if (placeholder[4] == " ")
+		{
+			placeholder[4] = LetterChoice();
+		}
+		else
+		{
+			cout << "Error: Place holder already used, please use a different one." << endl;
+		}
 	}
 	//placeholder 5		
 	if (AChoice == 6) {
-		placeholder[5] = LetterChoice();
+		if (placeholder[5] == " ")
+		{
+			placeholder[5] = LetterChoice();
+		}
+		else
+		{
+			cout << "Error: Place holder already used, please use a different one." << endl;
+		}
 	}
 	//placeholder 6		
-	if (AChoice == 7) {
-		placeholder[6] = LetterChoice();
+	if (AChoice == 7) { 
+		if (placeholder[6] == " ")
+		{
+			placeholder[6] = LetterChoice();
+		}
+		else
+		{
+			cout << "Error: Place holder already used, please use a different one." << endl;
+		}
 	}
 	//placeholder 7		
 	if (AChoice == 8) {
-		placeholder[7] = LetterChoice();
+		if (placeholder[7] == " ")
+		{
+			placeholder[7] = LetterChoice();
+		}
+		else
+		{
+			cout << "Error: Place holder already used, please use a different one." << endl;
+		}
 	}
 	//placeholder 8		
 	if (AChoice == 9) {
-		placeholder[8] = LetterChoice();
+		if (placeholder[8] == " ")
+		{
+			placeholder[8] = LetterChoice();
+		}
+		else
+		{
+			cout << "Error: Place holder already used, please use a different one." << endl;
+		}
 	}
 
 	return 0;
