@@ -8,36 +8,42 @@ using namespace std;
 
 string LetterChoice();
 int ArrayChoice(); 
+int PrintTurn(); 
+void WinConditions(); 
 
 
 FTicTacToe TicGame;
 
+
 int main() {
 
-	
+	PrintTurn();
+	   
+	 
 
-
-	cout << placeholder[0] << " | " << placeholder[1] << " | " << placeholder[2] <<endl; 
-	cout << placeholder[3] << " | " << placeholder[4] << " | " << placeholder[5] <<endl; 
-	cout << placeholder[6] << " | " << placeholder[7] << " | " << placeholder[8] <<endl; 
-
-	
-	ArrayChoice(); 
-
-	while (TicGame.Won = true)
+	while (TicGame.WON == false)
 	{
+
+         ArrayChoice();
+
 		cout << placeholder[0] << " | " << placeholder[1] << " | " << placeholder[2] << endl;
 		cout << placeholder[3] << " | " << placeholder[4] << " | " << placeholder[5] << endl;
 		cout << placeholder[6] << " | " << placeholder[7] << " | " << placeholder[8] << endl;
 
-		TicGame.TurnSwitch();
-		ArrayChoice();
+		TicGame.TurnSwitch(); 
+		PrintTurn(); 
+		WinConditions(); 
+		
+
 	}
-	
 
 	system("pause"); 
 	return 0;
 }
+
+
+
+	
 
 int ArrayChoice()
 {
@@ -151,11 +157,45 @@ string LetterChoice()
 {
 	string NChoice;
 	cin >> NChoice;
-	while (NChoice != "x")
+	if (TicGame.turn == TicGame.player1)
 	{
-		cout << "Error";
-		cin >> NChoice;
+
+	
+	   while (NChoice != "x")
+	   {
+		   cout << "Error, please enter 'x'" << endl;
+		   cin >> NChoice;
+	   }
+    }
+	else if(TicGame.turn == TicGame.player2)
+	{
+		while (NChoice != "o")
+		{
+			cout << "Error, please enter 'o'" << endl; 
+			cin >> NChoice; 
+		}
+	}
+	return NChoice;
+}
+
+
+int PrintTurn() {
+	if (TicGame.turn == TicGame.player1)
+	{
+		cout << "Turn: Player1" <<endl;
+	}
+	else if (TicGame.turn == TicGame.player2)
+	{
+		cout << "Turn: Player2" <<endl; 
 	}
 
-	return NChoice;
+	return 0; 
+}
+void WinConditions() {
+	if (placeholder[0], placeholder[1], placeholder[2] == "x") {	
+
+		TicGame.WON = true;
+
+		cout << "You Won!"; 
+	}
 }

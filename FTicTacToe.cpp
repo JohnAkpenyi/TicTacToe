@@ -14,7 +14,6 @@ FTicTacToe::FTicTacToe()
 
 int FTicTacToe::TurnSwitch()
 {
-
 	if (turn == player1) {
 		turn = player2;
 	}
