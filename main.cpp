@@ -2,6 +2,7 @@
 #include <string> 
 #include "FTicTacToe.h"
 
+
 std::string placeholder[9] = { " ", " "," "," ", " "," "," "," "," " };
 
 using namespace std; 
@@ -23,7 +24,7 @@ string player2name = "";
 int main() {
 
 
-	Intro(); 
+	Intro();
 	PrintTurn();
 	   
 	 
@@ -64,6 +65,10 @@ string Intro() {
 	cout << "To play this game, you need a keyboard lol," << endl;
 
 	cout << "To pick where you want to place your 'x' or 'o', you must first pick which space you want to put it in, the spaces range from 1 to 9, as you will see below" << endl; 
+	
+	cout << placeholder[0] << " | " << placeholder[1] << " | " << placeholder[2] << endl;
+	cout << placeholder[3] << " | " << placeholder[4] << " | " << placeholder[5] << endl;
+	cout << placeholder[6] << " | " << placeholder[7] << " | " << placeholder[8] << endl;
 
 	cout << "Player 1 can only use 'x', Player 2 can only use 'o'" << endl; 
 
@@ -94,7 +99,7 @@ int ArrayChoice()
 		}
 		else
 		{
-			cout << "Error: Place holder already used, please use a different one." << endl;
+			cout << "Error: Place holder already used, please use a different one." << endl;	
 			TicGame.turndone = false; 
 		}
 
@@ -264,7 +269,9 @@ void WinConditions() {
 		if (placeholder[1] == "x") {
 			if (placeholder[2] == "x")
 			{
+				TicGame.player1won = true;
 				printwin();
+				
 			}
 		}
 	}
@@ -274,7 +281,9 @@ void WinConditions() {
 		if (placeholder[4] == "x") {
 			if (placeholder[5] == "x")
 			{
+				TicGame.player1won = true;
 				printwin();
+				
 			}
 		}
 	}
@@ -284,7 +293,9 @@ void WinConditions() {
 		if (placeholder[7] == "x") {
 			if (placeholder[8] == "x")
 			{
+				TicGame.player1won = true;
 				printwin();
+				
 			}
 		}
 	}
@@ -296,7 +307,9 @@ void WinConditions() {
 		if (placeholder[3] == "x") {
 			if (placeholder[6] == "x")
 			{
+				TicGame.player1won = true;
 				printwin();
+				
 			}
 		}
 	}	
@@ -306,7 +319,9 @@ void WinConditions() {
 		if (placeholder[4] == "x") {
 			if (placeholder[7] == "x")
 			{
+				TicGame.player1won = true;
 				printwin();
+				
 			}
 		}
 	}	
@@ -316,7 +331,9 @@ void WinConditions() {
 		if (placeholder[5] == "x") {
 			if (placeholder[8] == "x")
 			{
+				TicGame.player1won = true;
 				printwin();
+				
 			}
 		}
 	}
@@ -328,7 +345,9 @@ void WinConditions() {
 		if (placeholder[4] == "x") {
 			if (placeholder[8] == "x")
 			{
+				TicGame.player2won = true;
 				printwin();
+				
 			}
 		}
 	}
@@ -338,7 +357,9 @@ void WinConditions() {
 		if (placeholder[4] == "x") {
 			if (placeholder[6] == "x")
 			{
+				TicGame.player2won = true;
 				printwin();
+				
 			}
 		}
 	}
@@ -354,6 +375,7 @@ void WinConditions() {
 			if (placeholder[2] == "o")
 			{
 				printwin();
+				TicGame.player2won = true;
 			}
 		}
 	}
@@ -364,6 +386,7 @@ void WinConditions() {
 			if (placeholder[5] == "o")
 			{
 				printwin();
+				TicGame.player2won = true;
 			}
 		}
 	}
@@ -374,6 +397,7 @@ void WinConditions() {
 			if (placeholder[8] == "o")
 			{
 				printwin();
+				TicGame.player2won = true;
 			}
 		}
 	}
@@ -386,6 +410,7 @@ void WinConditions() {
 			if (placeholder[6] == "o")
 			{
 				printwin();
+				TicGame.player2won = true;
 			}
 		}
 	}
@@ -396,6 +421,7 @@ void WinConditions() {
 			if (placeholder[7] == "o")
 			{
 				printwin();
+				TicGame.player2won = true;
 			}
 		}
 	}
@@ -406,6 +432,7 @@ void WinConditions() {
 			if (placeholder[8] == "o")
 			{
 				printwin();
+				TicGame.player2won = true;
 			}
 		}
 	}
@@ -418,6 +445,7 @@ void WinConditions() {
 			if (placeholder[8] == "o")
 			{
 				printwin();
+				TicGame.player2won = true;
 			}
 		}
 	}
@@ -428,6 +456,7 @@ void WinConditions() {
 			if (placeholder[6] == "o")
 			{
 				printwin();
+				TicGame.player2won = true;
 			}
 		}
 	}
@@ -438,5 +467,16 @@ void WinConditions() {
 void printwin() {
 	TicGame.WON = true;
 
-	cout << "You Won!";
+	if (TicGame.player1won == true)
+	{
+        cout << player1name <<" Won!";
+	}
+
+	if (TicGame.player2won == true)
+	{
+        cout << player2name <<" Won!";
+	}
+
+	
 }
+
